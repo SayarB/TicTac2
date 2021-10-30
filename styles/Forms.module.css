@@ -1,0 +1,19 @@
+.join_form {
+  background-color: rgb(250, 250, 250);
+  padding: 20px;
+  width: min(500px, 100vw);
+  text-align: center;
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  margin: auto 20px;
+}
+.join_form > * {
+  color: white;
+}
+.join_page {
+  height: 100vh;
+  display: flex;
+  flex-direction: column;
+  place-items: center;
+}
