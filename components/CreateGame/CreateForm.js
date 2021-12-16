@@ -2,10 +2,24 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { useEffect, useState } from "react";
 import styles from "../../styles/Forms.module.css";
+import io from "socket.io-client";
+import { useRouter } from "next/router";
 export default function CreateForm() {
   const [username, setUsername] = useState("");
-
-  const handleCreate = () => {};
+  const [socket, setSocket] = useState(null);
+  const router = useRouter();
+  useEffect(() => {
+    const _socket = io("http://localhost:8000/create");
+    setSocket(_socket);
+  }, [setSocket]);
+  const handleCreate = () => {
+    if (socket == null) return;
+    socket.emit("create-room", username, "ABCD");
+    router.push({
+      pathname: "/game/ABCD",
+      query: { username },
+    });
+  };
   return (
     <div className={styles.join_form}>
       <h1 style={{ color: "black" }}>CREATE A GAME</h1>
