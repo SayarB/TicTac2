@@ -14,10 +14,10 @@ export default function CreateForm() {
   }, [setSocket]);
   const handleCreate = () => {
     if (socket == null) return;
-    socket.emit("create-room", username, "ABCD");
+
     router.push({
       pathname: "/game/ABCD",
-      query: { username },
+      query: { username, method: "create" },
     });
   };
   return (

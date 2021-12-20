@@ -2,12 +2,16 @@ import TextField from "@material-ui/core/TextField";
 import Button from "@material-ui/core/Button";
 import { useEffect, useState } from "react";
 import styles from "../../styles/Forms.module.css";
+import { useRouter } from "next/router";
 export default function JoinForm() {
   const [username, setUsername] = useState("");
   const [code, setCode] = useState("");
-
+  const router = useRouter();
   const handleJoin = () => {
-    console.log("Username : ", username, "\nCode : ", code);
+    router.push({
+      pathname: "/game/" + code,
+      query: { username, method: "join" },
+    });
   };
   return (
     <div className={styles.join_form}>
