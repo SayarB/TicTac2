@@ -38,6 +38,12 @@
 .winner_combination {
   background-color: hsl(125, 62%, 77%);
 }
+
+.loser_combination {
+  background-color: hsl(29, 76%, 61%);
+}
+
+
 .winner_combination:hover {
   background-color: hsl(125, 62%, 77%);
 }
@@ -51,6 +57,13 @@
 .winner_text {
   position: absolute;
   color: rgb(78, 228, 215);
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+}
+.loser_text {
+  position: absolute;
+  color: rgb(230, 85, 59);
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
