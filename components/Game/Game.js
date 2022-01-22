@@ -16,7 +16,7 @@ export default function Game({ username, code, method }) {
   const [gameOver, setGameOver] = useState(false);
   const router = useRouter();
   useEffect(() => {
-    const _socket = io("http://localhost:8000/game");
+    const _socket = io("https://enigmatic-hamlet-07699.herokuapp.com/game");
     setSocket(_socket);
   }, [setSocket]);
 

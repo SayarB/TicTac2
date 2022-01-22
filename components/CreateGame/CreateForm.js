@@ -9,7 +9,7 @@ export default function CreateForm() {
   const [socket, setSocket] = useState(null);
   const router = useRouter();
   useEffect(() => {
-    const _socket = io("http://localhost:8000/create");
+    const _socket = io("https://enigmatic-hamlet-07699.herokuapp.com/create");
     setSocket(_socket);
   }, [setSocket]);
   const handleCreate = () => {
